@@ -5,10 +5,7 @@ import flixel.graphics.frames.FlxBitmapFont;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRandom;
-import flixel.system.FlxAssets;
 import flixel.text.FlxBitmapText;
-import flixel.text.FlxText;
-import flixel.tweens.FlxTween;
 
 class PlayState extends FlxState
 {
@@ -33,7 +30,7 @@ class PlayState extends FlxState
 
 	public var ROLL_COST:Int = 100;
 
-	var MATCH_VALUES:Array<Int> = [100, 300, 500];
+	var MATCH_VALUES:Array<Int> = [300, 500, 777];
 
 	var match_return_to_bg_timer:Int = 0;
 
