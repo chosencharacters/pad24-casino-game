@@ -1,9 +1,12 @@
 package;
 
 import flixel.FlxState;
+import flixel.graphics.frames.FlxBitmapFont;
 import flixel.group.FlxGroup.FlxTypedGroup;
+import flixel.math.FlxPoint;
 import flixel.math.FlxRandom;
 import flixel.system.FlxAssets;
+import flixel.text.FlxBitmapText;
 import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
 
@@ -26,7 +29,7 @@ class PlayState extends FlxState
 	public var d_money:Int = 0;
 	public var money:Int = 1000;
 	public var max_money:Int = 9999;
-	public var money_text:FlxText;
+	public var money_text:FlxBitmapText;
 
 	public var ROLL_COST:Int = 100;
 
@@ -58,9 +61,13 @@ class PlayState extends FlxState
 			}
 		}
 
-		money_text = new FlxText(6, -5, 100, "9999", 8);
-		money_text.font = "assets/fonts/6px-Normal.ttf";
+		var fontMono = FlxBitmapFont.fromMonospace(AssetPaths.d12_numbers__png, "0123456789", FlxPoint.weak(4, 5));
+
+		money_text = new FlxBitmapText(fontMono);
+		money_text.setPosition(9, 0);
 		money_text.color = 0xffffde70;
+		money_text.text = "1000";
+
 		button = new RollButton(0, 17);
 
 		add(bg);
